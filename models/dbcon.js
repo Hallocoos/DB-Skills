@@ -15,7 +15,7 @@ var config = {
     database: process.env.DATABASE
 };
 
-// console.log(config);
+console.log(config);
 
 // connect to your database
 sql.connect(config, function (err) {
@@ -71,7 +71,7 @@ sql.connect(config, function (err) {
                 if (err)
                     console.log(err);
             });
-        // console.log("Connection successful!");
+        console.log("Connection successful!");
     }
 });
 
