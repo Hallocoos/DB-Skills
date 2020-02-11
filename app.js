@@ -1,6 +1,6 @@
 var express = require("express");
 var app = express();
-var ExcelParser = require('./models/ExcelParser');
+var ExcelParser = require('./models/ExcelParser.js');
 var path = require("path");
 var request = require("./models/dbcon");
 
