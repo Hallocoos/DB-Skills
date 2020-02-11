@@ -3,9 +3,6 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 var sql = require("mssql");
-var express = require("express");
-var app = express();
-const dotenv = require('dotenv');
 
 // config for your database
 var config = {
