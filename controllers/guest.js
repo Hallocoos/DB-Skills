@@ -44,17 +44,17 @@ exports.getEmployeeSkills = async (req, res, next) => {
         query = 'SELECT id, stack, skill, rating' +
             ' FROM dbo.back_end';
         if (req.params.keys !== null)
-            query = query + ' WHERE id = ' + req.params.keys;
+            query = query + ' WHERE employeeId = ' + req.params.keys;
         query = query + ' UNION' +
             ' SELECT id, stack, skill, rating' +
             ' FROM dbo.front_end';
         if (req.params.keys !== null)
-            query = query + ' WHERE id = ' + req.params.keys;
+            query = query + ' WHERE employeeId = ' + req.params.keys;
         ' UNION'
         query = query + ' SELECT id, stack, skill, rating' +
             ' FROM dbo.ntt_system';
         if (req.params.keys !== null)
-            query = query + ' WHERE id = ' + req.params.keys + ';';
+            query = query + ' WHERE employeeId = ' + req.params.keys + ';';
 
         await request.query(query,
             function (err, data) {
@@ -69,6 +69,9 @@ exports.getEmployeeSkills = async (req, res, next) => {
 
 
 exports.uploadFile = async (req, res, next) => {
+    if (!req.file.filename)
+        res.redirect('/');
+
     var uploadPath = process.env.ROOTPATH + 'uploads\\' + req.file.filename;
     var filePath = path.resolve(uploadPath)
 
