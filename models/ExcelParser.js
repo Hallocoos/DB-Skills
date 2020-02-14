@@ -81,7 +81,7 @@ class ExcelParser {
   get excelObject() {
     return this.excelWorkbook;
   }
-  
+
 }
 
 module.exports = ExcelParser;
