@@ -1,14 +1,17 @@
 // require class
-var ExcelParser = require('./ExcelParser');
+var ExcelParser = require('./ExcelParser.js');
 var path = require("path");
 
 // resolve with uploaded file into filePath
-var filePath = path.resolve("/mnt/c/Users/Ricgardt.Engelbrecht/Downloads/DBSauce", process.argv[2])
+var filePath = path.resolve('CDiogo Skills DB.xlsx');
 
-// instantiate class with path to excel file
-var excelparser = new ExcelParser(filePath);
+// instantiate class
+var excelparser = new ExcelParser();
+
+// use method to parse excel spreadsheet
+excelparser.parseExcel(filePath)
 
 // get parsed object from class
-var excelObject = excelparser.excelObject;
+let excelObject = excelparser.excelObject;
 
-//console.log(excelObject);
+console.log(excelObject);
