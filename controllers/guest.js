@@ -76,9 +76,11 @@ exports.uploadFile = async (req, res, next) => {
     var filePath = path.resolve(uploadPath)
 
 
-    // instantiate class with path to excel file
-    var excelparser = new ExcelParser(filePath);
-
+    // instantiate class
+    var excelparser = new ExcelParser();
+    // parse excel file into object
+    excelparser.parseExcel(filePath);
+    
     // get parsed object from class
     var excelObject = excelparser.excelObject;
     // console.log(excelObject);
