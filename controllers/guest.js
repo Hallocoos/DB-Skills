@@ -80,7 +80,7 @@ exports.uploadFile = async (req, res, next) => {
     var excelparser = new ExcelParser();
     // parse excel file into object
     excelparser.parseExcel(filePath);
-    
+
     // get parsed object from class
     var excelObject = excelparser.excelObject;
     // console.log(excelObject);
@@ -109,5 +109,5 @@ exports.uploadFile = async (req, res, next) => {
         console.log("User already in Database.");
     }
 
-    res.redirect('/');
+    res.send(excelObject);
 }
