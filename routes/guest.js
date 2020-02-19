@@ -13,6 +13,6 @@ router.get('/getEmployeeByID/:keys', guestController.getEmployeeByID);
 
 router.get('/getEmployeeSkills/:keys', guestController.getEmployeeSkills);
 
-router.post('/uploadFile', upload.single('file'), guestController.uploadFile);
+router.post('/uploadFile', upload.single('fileField'), guestController.uploadFile);
 
 module.exports = router;
