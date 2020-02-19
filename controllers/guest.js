@@ -102,7 +102,7 @@ exports.uploadFile = async (req, res, next) => {
 
             await dbqry.insertEmployeeSkills(employeeSkills.backEnd, 'back_end', id);
             await dbqry.insertEmployeeSkills(employeeSkills.frontEnd, 'front_end', id);
-            await dbqry.insertEmployeeSkills(employeeSkills.nttSystem, 'ntt_system', id);
+            await dbqry.insertEmployeeSkills(employeeSkills.nttSystems, 'ntt_system', id);
         }
     } else {
         console.log(id.recordset[0].id);
